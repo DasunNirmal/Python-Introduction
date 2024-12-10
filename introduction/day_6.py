@@ -193,6 +193,7 @@ import csv
 #         csv_writer.writerow(filtered_data)
 # print("Data has been written to high_salary_employees.csv")
 
+
 # Nested Functions
 
 def outer_function(x):
@@ -201,3 +202,14 @@ def outer_function(x):
     return inner_function
 
 print(outer_function(10)(20)) # 30
+
+# Pass functions as arguments
+
+def add(x,y):
+    return x + y
+
+def calculate(func,x,y):
+    return func(x,y)
+
+result = calculate(add,10,20)
+print(result) # 30
