@@ -25,3 +25,13 @@
     # print("using readlines() :",file_contents_3) # ['Dasun\n', 'Nirmal\n', '21']
 
     # Using with we don't need to close the file manually
+
+with open("myfile_2.txt","w") as file_03:
+
+    # using the write command when we try to write a new line the existing line will be erased and then the new line will wirte 
+
+    # file_03.write("Hello World \nthis is our python class")
+    my_list = list(("Hi\n","This is a new line created using\n","writelines"))
+    my_list.append("\nWe are IJSE")
+    file_03.writelines(my_list)
+    

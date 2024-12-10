@@ -1,0 +1,4 @@
+Hi
+This is a new line created using
+writelines
+We are IJSE
