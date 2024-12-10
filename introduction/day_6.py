@@ -124,9 +124,34 @@
 
 # to store strcured we can use csv files
 
+# SCV
 import csv
-csv_file_path = "customers-1000.csv"
-with open(csv_file_path,"r",newline='') as csv_file:
-    csv_reader = csv.reader(csv_file)
+# csv_file_path = "customers-1000.csv"
+# with open(csv_file_path,"r",newline='') as csv_file:
+#     csv_reader = csv.reader(csv_file)
+#     for row in csv_reader:
+#         print(row)
+
+# csv_file_path = "testCsv.csv"
+# with open("testCsv.csv","w",newline='') as csv_file:
+    
+#     data = [
+#         {"Name":"Dasun","Age":21,"Address":"Ragama"},
+#         {"Name":"Nirmal","Age":21,"Address":"Ragama"},
+#         {"Name":"Kasun","Age":21,"Address":"Ragama"},
+#         {"Name":"Nimal","Age":21,"Address":"Ragama"},
+#         {"Name":"Kamal","Age":21,"Address":"Ragama"},
+#     ]
+
+#     filed_name = ["Name","Age","Address"] # difine the headers
+
+#     csv_writer = csv.DictWriter(csv_file,fieldnames=filed_name)
+#     csv_writer.writeheader() # writing the headers
+#     for row in data:
+#         csv_writer.writerow(row)
+# print(F"Data has been written to{csv_file_path}")
+
+with open("testCsv.csv","r",newline='') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
-        print(row)
+        print(row,type(row)) # row is a dictionary
