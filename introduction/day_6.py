@@ -151,7 +151,53 @@ import csv
 #         csv_writer.writerow(row)
 # print(F"Data has been written to{csv_file_path}")
 
-with open("testCsv.csv","r",newline='') as csv_file:
-    csv_reader = csv.DictReader(csv_file)
-    for row in csv_reader:
-        print(row,type(row)) # row is a dictionary
+# with open("testCsv.csv","r",newline='') as csv_file:
+#     csv_reader = csv.DictReader(csv_file)
+#     for row in csv_reader:
+#         print(row,type(row)) # row is a dictionary
+
+# TASK
+
+# create a python program to manage a company's employee records stored in csv files
+# the program should read the employee details from the csv file, filter the records based on a condition and 
+# write the filtered records to a new csv file
+
+# 1. employee.csv - contaend the following columns 
+#   employee ID, Name, Department, Salary
+
+#  2. high_salary_employees.csv
+#    it should contain the details of all employees who have a salary greater than 57,000
+
+# read the input file, use csv.reader to read employees.csv and display all the records
+# filter the records identify the employees who have a salary greater than 57,000
+# write the filtered records to high_salary_employees.csv
+
+
+# csv_file_path = "Python/introduction/employee.csv"
+# with open(csv_file_path,"r",newline='') as csv_file:
+#     csv_reader = csv.reader(csv_file)
+    
+#     for row in csv_reader:
+#         print("Employee Details",row)
+
+# filtered_data = []
+# with open(csv_file_path,"r",newline='') as data:
+#     csv_reader = csv.DictReader(data)
+#     for row in csv_reader:
+#         if int(row["Salary"]) > 57000:
+#             filtered_data.append(row)
+#     with open("high_salary_employees.csv","w",newline='') as high_salary_employees:
+#         filed_name = ["Employee ID","Name","Department","Salary"]
+#         csv_writer = csv.DictWriter(high_salary_employees,fieldnames=filed_name)
+#         csv_writer.writeheader()
+#         csv_writer.writerow(filtered_data)
+# print("Data has been written to high_salary_employees.csv")
+
+# Nested Functions
+
+def outer_function(x):
+    def inner_function(y):
+        return x + y
+    return inner_function
+
+print(outer_function(10)(20)) # 30
