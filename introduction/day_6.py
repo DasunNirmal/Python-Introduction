@@ -125,11 +125,8 @@
 # to store strcured we can use csv files
 
 import csv
-csv_file_path = "Python/introduction/customers-1000.csv"
+csv_file_path = "customers-1000.csv"
 with open(csv_file_path,"r",newline='') as csv_file:
     csv_reader = csv.reader(csv_file)
-
-    print(csv_reader,type(csv_reader))
-    
     for row in csv_reader:
         print(row)
