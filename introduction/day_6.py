@@ -213,3 +213,19 @@ def calculate(func,x,y):
 
 result = calculate(add,10,20)
 print(result) # 30
+
+# Python Decorators
+
+def make_pretty(func):
+    def inner():
+        print("I got decorated")
+        func()
+    return inner
+
+def ordinary():
+    print("I am ordinary")
+
+get_decorated = make_pretty(ordinary)
+get_decorated()
+
+# @Symbol with decorators
