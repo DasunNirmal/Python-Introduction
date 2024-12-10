@@ -79,7 +79,7 @@
 #         exit()            
 
 # {jason eky should be string unlike python dictionary key where ut can be any immutable type}
-import json
+# import json
 # json_file_path = "example_1.json"
 # with open("Python/introduction/example_1.json","r") as json_file:
 #     json_data = json.load(json_file) # load uses to convert the json to a dict
@@ -106,18 +106,30 @@ import json
 # save the updated data back to the json file
 
 
-jason_file_path = "student.json"
-with open(jason_file_path,"r") as json_file:
-    jason_data = json.load(json_file)
+# jason_file_path = "student.json"
+# with open(jason_file_path,"r") as json_file:
+#     jason_data = json.load(json_file)
     
-    for student in jason_data:
-        if student["grade"] > 75:
-            print("Student Who got over 75% marks : ",student["name"],"::",student["grade"])
+#     for student in jason_data:
+#         if student["grade"] > 75:
+#             print("Student Who got over 75% marks : ",student["name"],"::",student["grade"])
 
-new_student = {
-    "name": "Nirmal",
-    "grade": 85
-}
-with open(jason_file_path,"w") as json_file:
-    jason_data.append(new_student)
-    json.dump(jason_data,json_file,indent=4)
+# new_student = {
+#     "name": "Nirmal",
+#     "grade": 85
+# }
+# with open(jason_file_path,"w") as json_file:
+#     jason_data.append(new_student)
+#     json.dump(jason_data,json_file,indent=4)
+
+# to store strcured we can use csv files
+
+import csv
+csv_file_path = "Python/introduction/customers-1000.csv"
+with open(csv_file_path,"r",newline='') as csv_file:
+    csv_reader = csv.reader(csv_file)
+
+    print(csv_reader,type(csv_reader))
+    
+    for row in csv_reader:
+        print(row)
