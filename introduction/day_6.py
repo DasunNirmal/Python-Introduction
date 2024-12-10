@@ -196,49 +196,71 @@ import csv
 
 # Nested Functions
 
-def outer_function(x):
-    def inner_function(y):
-        return x + y
-    return inner_function
+# def outer_function(x):
+#     def inner_function(y):
+#         return x + y
+#     return inner_function
 
-print(outer_function(10)(20)) # 30
+# print(outer_function(10)(20)) # 30
 
-# Pass functions as arguments
+# # Pass functions as arguments
 
-def add(x,y):
-    return x + y
+# def add(x,y):
+#     return x + y
 
-def calculate(func,x,y):
-    return func(x,y)
+# def calculate(func,x,y):
+#     return func(x,y)
 
-result = calculate(add,10,20)
-print(result) # 30
+# result = calculate(add,10,20)
+# print(result) # 30
 
 # Python Decorators
 
-def make_pretty(func):
-    def inner():
-        print("I got decorated")
-        func()
-    return inner
+# def make_pretty(func):
+#     def inner():
+#         print("I got decorated")
+#         func()
+#     return inner
 
-def ordinary():
-    print("I am ordinary")
+# def ordinary():
+#     print("I am ordinary")
 
-get_decorated = make_pretty(ordinary)
-get_decorated()
+# get_decorated = make_pretty(ordinary)
+# get_decorated()
 
 
 # @Symbol with decorators
 
-def make_pretty(func):
-    def inner():
-        print("I got decorated")
-        func()
+# def make_pretty(func):
+#     def inner():
+#         print("I got decorated")
+#         func()
+#     return inner
+
+# @make_pretty # this is the decorator
+# def ordinary():
+#     print("I am ordinary")
+
+# ordinary()
+
+# creat a decorator check_positive that
+# check if the input number is positive or not
+# if the input is not positive print a message like "The input must be a positive number"
+# use this decorator on a function calculate_square_root that take one number as input
+# returns the square root of the input number 
+
+import math
+def check_positive(func):
+    def inner(x):
+        if x < 0:
+            print("The input must be a positive number")
+        else:
+            return func(x)
     return inner
 
-@make_pretty # this is the decorator
-def ordinary():
-    print("I am ordinary")
+@check_positive
+def calculate_square_root(x):
+    return math.sqrt(x)
 
-ordinary()
+input_number = int(input("Enter a number : "))
+print(calculate_square_root(input_number))
