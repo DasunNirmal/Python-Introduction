@@ -241,5 +241,4 @@ def make_pretty(func):
 def ordinary():
     print("I am ordinary")
 
-get_decorated = make_pretty(ordinary)
-get_decorated()
+ordinary()
