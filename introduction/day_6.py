@@ -47,33 +47,41 @@
 
 
     
-while True :
-    print("\nEnter 1 to Add a Contact: ")
-    print("Enter 2 to View Contacts: ")
-    print("Enter 3 to exit: \n")
+# while True :
+#     print("\nEnter 1 to Add a Contact: ")
+#     print("Enter 2 to View Contacts: ")
+#     print("Enter 3 to exit: \n")
 
-    option = input("Optin : ")
-    if option == "1" :
-        print("\n=========================================================\n")
-        with open("contact.txt","a") as contacts :
-            name = input("Enter Name : ")
-            phone_number = input("Enter Your Phone Number : ")
-            email = input("Enter Your Email : ")
-            contacts.write(f"\n\nName: {name} \nPhone Number: {phone_number} \nEmail: {email}\n")
-            print("=========================================================\n")
-    else :
-        print("wrong input try again")
-        continue
+#     option = input("Optin : ")
+#     if option == "1" :
+#         print("\n=========================================================\n")
+#         with open("contact.txt","a") as contacts :
+#             name = input("Enter Name : ")
+#             phone_number = input("Enter Your Phone Number : ")
+#             email = input("Enter Your Email : ")
+#             contacts.write(f"\n\nName: {name} \nPhone Number: {phone_number} \nEmail: {email}\n")
+#             print("=========================================================\n")
+#     else :
+#         print("wrong input try again")
+#         continue
 
-    if option == "2" :
-        print("=========================================================")
-        with open("contact.txt","r") as readContacts:
-            c = readContacts.read()
-            print(c,"\n")
-            print("=========================================================")
-    else :
-        print("wrong input try again!!")
-        continue
+#     if option == "2" :
+#         print("=========================================================")
+#         with open("contact.txt","r") as readContacts:
+#             c = readContacts.read()
+#             print(c,"\n")
+#             print("=========================================================")
+#     else :
+#         print("wrong input try again!!")
+#         continue
 
-    if option == "3" :
-        exit()            
+#     if option == "3" :
+#         exit()            
+
+# {jason eky should be string unlike python dictionary key where ut can be any immutable type}
+import json
+json_file_path = "example_1.json"
+with open("Python/introduction/example_1.json","r") as json_file:
+    json_data = json.load(json_file)
+
+print(json_data,type(json_data))
