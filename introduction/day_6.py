@@ -80,8 +80,44 @@
 
 # {jason eky should be string unlike python dictionary key where ut can be any immutable type}
 import json
-json_file_path = "example_1.json"
-with open("Python/introduction/example_1.json","r") as json_file:
-    json_data = json.load(json_file)
+# json_file_path = "example_1.json"
+# with open("Python/introduction/example_1.json","r") as json_file:
+#     json_data = json.load(json_file) # load uses to convert the json to a dict
 
-print(json_data,type(json_data))
+# print(json_data,type(json_data))
+
+# data = {
+#     "Name": "Dasun",
+#     "Age": "21",
+#     "Address": "Ragama"
+# }
+# jason_file_path = "test.json"
+# with open(jason_file_path,"w") as json_file:
+#     jason_data = json.dumps(data,indent=4) # dump uses to convert the dict to a json
+#     json_file.write(jason_data)
+
+# print(f"Data has been written to {jason_file_path}")
+
+# you are given a josn file name students.json which contents info about students and their marks
+# your task is to 
+# read the file and display the data in the following format
+# display the names of all students who scored above 75
+# add a new student to the file
+# save the updated data back to the json file
+
+
+jason_file_path = "student.json"
+with open(jason_file_path,"r") as json_file:
+    jason_data = json.load(json_file)
+    
+    for student in jason_data:
+        if student["grade"] > 75:
+            print("Student Who got over 75% marks : ",student["name"],"::",student["grade"])
+
+new_student = {
+    "name": "Nirmal",
+    "grade": 85
+}
+with open(jason_file_path,"w") as json_file:
+    jason_data.append(new_student)
+    json.dump(jason_data,json_file,indent=4)
