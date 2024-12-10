@@ -1,6 +1,6 @@
 # BASIC WAY TO READ A FILE OR WRITE A FILE
 
-# file_01 = open("myfile.txt","r") 
+# file_01 = open("myfile_1.txt","r") 
 # by default it is read mode but you can specify it as "r" mode as well
 # if in in the read mode the specified file does not exist, it will throw an error
 
@@ -14,7 +14,7 @@
 
 # file_01.close()
 
-# with open("myfile.txt","r") as file_02:
+# with open("myfile_1.txt","r") as file_02:
     
     # file_contents_1 = file_02.read()
     # file_contents_2 = file_02.readline()
