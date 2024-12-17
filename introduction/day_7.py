@@ -129,9 +129,46 @@ df = pd.DataFrame(data, index=['A', 'B', 'C', 'D'])
 
 # Useful Attributes
 
-print("Shape",df.shape,"\n")
-print("Columns",df.columns,"\n")
-print("List",list(df.columns),"\n")
-print("Elements",df.size,"\n")
-print("Converted numpy array\n",df.values,"\n",type(df.values),"\n")
+# print("Shape",df.shape,"\n")
+# print("Columns",df.columns,"\n")
+# print("List",list(df.columns),"\n")
+# print("Elements",df.size,"\n")
+# print("Converted numpy array\n",df.values,"\n",type(df.values),"\n")
+
+
+# Length of DataFrame
+
+# print("Number Of Rows",len(df),"\n")
+
+
+
+# Task
+# OrderID,  Product,    Category,       Quantity,    Price,     Regin 
+#   101      Laptop       electronics       2          50000     North
+#   102      Smartphone   electronics       3          20000     South
+#   103      Desk,Chair   Furniture         10         10000     East
+#   104      Monitor      electronics       4          10000     West
+#   105      Bookshelf    Furniture         2          15000     North
+
+# You are a data anilityst at a e-commerce company. You have been given the above data. Create a DataFrame using the above data.
+# Calculate the total revenue for the each order and add a new column total_revenue to store the total revenue for each order.
+# Identify the best selling product and find the product with thw hights total sales revenue.
+
+data = {
+    'OrderID': [101, 102, 103, 104, 105],
+    'Product': ['Laptop', 'Smartphone', 'Desk,Chair', 'Monitor', 'Bookshelf'],
+    'Category': ['electronics', 'electronics', 'Furniture', 'electronics', 'Furniture'],
+    'Quantity': [2, 3, 10, 4, 2],
+    'Price': [50000, 20000, 10000, 10000, 15000],
+    'Region': ['North', 'South', 'East', 'West', 'North']
+}
+
+order = pd.DataFrame(data)
+print(order,"\n")
+
+order['Total_Revenue'] = order['Quantity'] * order['Price']
+print("<<<---With New Column Total Revenue--->>>\n",order,"\n")
+
+best_selling_rpoduct = order['Product'][order['Total_Revenue'].idxmax()]
+print("Best Selling Product is --->>>",best_selling_rpoduct)
 
