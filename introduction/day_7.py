@@ -164,11 +164,39 @@ data = {
 }
 
 order = pd.DataFrame(data)
-print(order,"\n")
+# print(order,"\n")
 
 order['Total_Revenue'] = order['Quantity'] * order['Price']
-print("<<<---With New Column Total Revenue--->>>\n",order,"\n")
+# print("<<<---With New Column Total Revenue--->>>\n",order,"\n")
 
 best_selling_rpoduct = order['Product'][order['Total_Revenue'].idxmax()]
-print("Best Selling Product is --->>>",best_selling_rpoduct)
+# print("Best Selling Product is --->>>",best_selling_rpoduct)
 
+# Methods in Pandas
+data = {
+    'Salary': [10000, 20000, 30000, 40000],
+    'Age': [20, 21, 22, 23]
+}
+ndf = pd.DataFrame(data)
+# print("Mean/Average\n",ndf.mean(),"\n")
+# print("Sum\n",ndf.sum(),"\n")
+# print("Describe",ndf.describe(),"\n")
+
+
+# Filtering in Pandas
+
+#  Name,         Age,        Score
+#   Tom           20          85
+#   Jerry         21          70
+#   Mickey        22          90
+#   Donald        23          88
+
+data = {
+    'Name': ['Tom', 'Jerry', 'Mickey', 'Donald'],
+    'Age': [20, 21, 22, 23],
+    'Score': [85, 70, 90, 88]
+}
+
+dfg = pd.DataFrame(data)
+filtered_data = dfg[dfg['Age'] > 20]
+print("Filtered Data\n",filtered_data,"\n",type(filtered_data),"\n")
