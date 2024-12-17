@@ -125,3 +125,13 @@ df = pd.DataFrame(data, index=['A', 'B', 'C', 'D'])
 # print("Returns Single row\n",df.loc['A'])
 # print("Returns Multiple row\n",df.loc[['A', 'B']])
 # print(df['Name'])
+
+
+# Useful Attributes
+
+print("Shape",df.shape,"\n")
+print("Columns",df.columns,"\n")
+print("List",list(df.columns),"\n")
+print("Elements",df.size,"\n")
+print("Converted numpy array\n",df.values,"\n",type(df.values),"\n")
+
