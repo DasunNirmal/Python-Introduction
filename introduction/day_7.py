@@ -199,4 +199,20 @@ data = {
 
 dfg = pd.DataFrame(data)
 filtered_data = dfg[dfg['Age'] > 20]
-print("Filtered Data\n",filtered_data,"\n",type(filtered_data),"\n")
+# print("Filtered Data\n",filtered_data,"\n",type(filtered_data),"\n")
+
+
+# Data Manipulation
+
+# A         B
+# 1         23
+# 2         45
+
+dfv = pd.DataFrame({'A': [1, 2], 'B': [23, 45]})
+dfv.loc[len(dfv)] = [3, 67]
+print("Adding a column\n",dfv,"\n")
+
+dfv_dropped_column = dfv.drop('B',axis=1)
+dfv_dropped_row = dfv.drop(1,axis=0)
+print("Dropped a column\n",dfv_dropped_column,"\n")
+print("Dropped a row\n",dfv_dropped_row,"\n")
