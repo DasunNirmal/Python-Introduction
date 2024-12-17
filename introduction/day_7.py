@@ -44,7 +44,7 @@ array_2 = np.array([[[1,2,5],[2,3,5]], [[3,4,4],[5,8,8]]])
 
 
 # Task
-#1.create a 2d numpy arrray which has daimentions 4,5 which contaons the numbers 1 to 20
+#1.create a 2d numpy arrray which has daimentions 4,5 which contains the numbers 1 to 20
 array_3 = np.array([[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15],[16,17,18,19,20]])
 print("2D Array:\n", array_3)
 
