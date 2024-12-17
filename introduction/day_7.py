@@ -29,8 +29,10 @@ result_min = np.min(a)
 # Multidimanional Array
 array_1 = np.array([[1, 2], [3, 4]])
 print("Array 2D",array_1)
-print(array_1.size)
+print("Dimantion",array_1.shape)
+print("Data type",array_1.dtype)
 
-array_2 = np.array([[[5, 6], [7, 8], [9, 10]]])
+array_2 = np.array([[[1,2,5],[2,3,5]], [[3,4,4],[5,8,8]]])
 print("Array 3D",array_2)
-print(array_2.size)
+print("Dimantion",array_2.shape)
+print("Data type",array_2.dtype)
