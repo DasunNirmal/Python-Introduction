@@ -3,6 +3,7 @@
 # 1. Numpy
 
 import numpy as np
+import pandas as pd
 
 a = np.array([1, 2, 3])
 b = np.array([4, 5, 6])
@@ -97,8 +98,11 @@ array_8 = np.empty((2, 3))
 
 array_9 = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
 filtered_even = array_9[array_9 % 2 == 0]
-print("Filtered Even Array:", filtered_even)
+# print("Filtered Even Array:", filtered_even)
 
 array_10 = np.array([10, 20, 30, 40, 50])
 filtered_greater = array_10[array_10 > np.mean(array_10)]
-print("Filtered Greater Array:", filtered_greater)
+# print("Filtered Greater Array:", filtered_greater)
+
+
+# 2. Pandas
