@@ -1,9 +1,7 @@
 #Python Libraries and Data Processing
 
 # 1. Numpy
-
 import numpy as np
-import pandas as pd
 
 a = np.array([1, 2, 3])
 b = np.array([4, 5, 6])
@@ -106,3 +104,24 @@ filtered_greater = array_10[array_10 > np.mean(array_10)]
 
 
 # 2. Pandas
+import pandas as pd
+
+# Crating a DataFrame using dictionary
+
+data = {
+    'Name': ['Tom', 'Jerry', 'Mickey', 'Donald'],
+    'Age': [20, 21, 22, 23]
+}
+
+df = pd.DataFrame(data)
+# print("Data Frame",df,"\n",type(df))
+# print("Age",df.loc[1, 'Age'])
+# print("Location",df.iloc[0, 0])
+# print("All Details Related to Index Number\n",df.loc[[0,1]])
+
+# Named Indexes
+df = pd.DataFrame(data, index=['A', 'B', 'C', 'D'])
+# print(df)
+# print("Returns Single row\n",df.loc['A'])
+# print("Returns Multiple row\n",df.loc[['A', 'B']])
+# print(df['Name'])
