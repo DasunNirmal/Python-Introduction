@@ -210,9 +210,23 @@ filtered_data = dfg[dfg['Age'] > 20]
 
 dfv = pd.DataFrame({'A': [1, 2], 'B': [23, 45]})
 dfv.loc[len(dfv)] = [3, 67]
-print("Adding a column\n",dfv,"\n")
+# print("Adding a column\n",dfv,"\n")
 
 dfv_dropped_column = dfv.drop('B',axis=1)
 dfv_dropped_row = dfv.drop(1,axis=0)
-print("Dropped a column\n",dfv_dropped_column,"\n")
-print("Dropped a row\n",dfv_dropped_row,"\n")
+# print("Dropped a column\n",dfv_dropped_column,"\n")
+# print("Dropped a row\n",dfv_dropped_row,"\n")
+
+
+
+# Read CSV files
+
+df = pd.read_csv('customers-1000.csv')
+# print(df,type(df),"\n")
+
+
+
+# Read JSON files
+
+dcf = pd.read_json('example_2.json')
+print(dcf,type(dcf))
